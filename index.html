@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бурда Юрій | Професійне укладання плитки</title>
+<meta name="description" content="Професійне укладання плитки. Ванні кімнати, кухні, підлога, керамограніт, великоформатна плитка. Досвід понад 10 років.">
+<meta name="theme-color" content="#16212b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16212b; --ink2:#2a3946; --porcelain:#f2f4f3; --white:#fff;
+  --glaze:#1565c0; --glaze-d:#0f4c91; --line:#d9dedc; --muted:#5d6b76;
+  --r:14px; --pad:clamp(20px,5vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{font-family:Onest,system-ui,sans-serif;color:var(--ink);background:var(--porcelain);line-height:1.6;font-size:16px;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:Unbounded,Onest,sans-serif;font-weight:500;line-height:1.15;letter-spacing:-.01em}
+:focus-visible{outline:3px solid var(--glaze);outline-offset:3px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--pad)}
+section{padding:64px 0}
+.head{margin-bottom:32px;max-width:640px}
+.head h2{font-size:clamp(24px,6vw,38px)}
+.head p{margin-top:12px;color:var(--muted)}
+
+/* Кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:12px;font-weight:600;font-size:16px;border:2px solid transparent;cursor:pointer;transition:background .2s,transform .1s}
+.btn:active{transform:scale(.98)}
+.btn-main{background:var(--glaze);color:#fff}
+.btn-main:hover{background:var(--glaze-d)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-dark{background:var(--ink);color:#fff}
+
+/* Шапка */
+.top{background:#16212b;color:#fff}
+.top .wrap{display:flex;align-items:center;height:60px}
+.logo{font-family:Unbounded,sans-serif;font-weight:600;font-size:15px;line-height:1.1}
+.logo small{display:block;font-family:Onest,sans-serif;font-weight:400;font-size:12px;opacity:.65;margin-top:3px}
+.menu{display:none}
+.burger{width:44px;height:44px;border:0;background:none;color:#fff;cursor:pointer;display:grid;place-content:center;gap:6px}
+.burger span{display:block;width:24px;height:2px;background:#fff;transition:transform .25s,opacity .2s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.menu.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--ink);padding:8px var(--pad) 24px;border-top:1px solid rgba(255,255,255,.12)}
+.menu a{padding:16px 0;font-size:18px;border-bottom:1px solid rgba(255,255,255,.1)}
+.menu .btn{margin-top:16px;border:0}
+.top-phone{display:none}
+
+/* Hero: сітка плитки зі швами */
+.hero{background:var(--ink);color:#fff;padding:48px 0 56px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,#000,transparent 85%);-webkit-mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+.hero .wrap{position:relative;display:grid;gap:36px}
+.hero h1{font-size:clamp(30px,8.5vw,56px)}
+.hero p{margin-top:18px;color:rgba(255,255,255,.78);max-width:520px;font-size:17px}
+.cta{display:grid;gap:10px;margin-top:28px}
+.msgs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.msgs .btn{padding:0 8px;font-size:15px}
+.stats{display:flex;gap:28px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15)}
+.stats b{display:block;font-family:Unbounded,sans-serif;font-weight:500;font-size:26px}
+.stats span{font-size:13px;color:rgba(255,255,255,.65)}
+.ph{background:var(--ink2);border-radius:var(--r);overflow:hidden;position:relative}
+.ph::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:40px 40px}
+.ph img{position:relative;width:100%;height:100%;object-fit:cover}
+.hero .ph{aspect-ratio:4/3}
+
+/* Про мене */
+.about .wrap{display:grid;gap:28px}
+.about .ph{aspect-ratio:4/5;max-width:420px}
+.about p{color:var(--muted);margin-top:14px;max-width:560px}
+.checks{list-style:none;margin-top:22px;display:grid;gap:10px}
+.checks li{padding-left:30px;position:relative;font-weight:500}
+.checks li::before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;border-radius:5px;background:var(--glaze) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4.5 9.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E")}
+
+/* Послуги */
+.list{background:var(--white);border-radius:var(--r);border:1px solid var(--line);overflow:hidden}
+.row{padding:20px 22px;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row h3{font-size:17px}
+.row p{margin-top:6px;color:var(--muted);font-size:15px}
+
+/* Переваги */
+.adv{background:var(--white)}
+.grid2{display:grid;gap:14px}
+.card{padding:24px;border-radius:var(--r);background:var(--porcelain);border-left:4px solid var(--glaze)}
+.card h3{font-size:17px}
+.card p{margin-top:8px;color:var(--muted);font-size:15px}
+
+/* Етапи */
+.steps{list-style:none;display:grid;gap:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 28px 64px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:Unbounded,sans-serif;font-size:16px;z-index:1}
+.steps li::after{content:"";position:absolute;left:21px;top:44px;bottom:0;width:2px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps h3{font-size:17px;padding-top:9px}
+.steps p{margin-top:6px;color:var(--muted);font-size:15px}
+
+/* Галерея */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.gal button{border:0;padding:0;aspect-ratio:1;cursor:zoom-in;background:none;border-radius:10px;overflow:hidden}
+.gal .ph{height:100%;border-radius:10px}
+dialog{border:0;background:transparent;max-width:100vw;max-height:100vh;width:100%;height:100%;padding:16px;margin:0}
+dialog::backdrop{background:rgba(10,15,20,.92)}
+dialog img{margin:auto;max-height:100%;object-fit:contain;border-radius:8px}
+dialog form{display:flex;height:100%;flex-direction:column;justify-content:center}
+.x{position:absolute;top:calc(12px + env(safe-area-inset-top));right:12px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;font-size:24px;cursor:pointer}
+
+/* До / після */
+.cmp{position:relative;aspect-ratio:4/3;max-width:760px;border-radius:var(--r);overflow:hidden;touch-action:pan-y;user-select:none}
+.cmp .ph{position:absolute;inset:0;border-radius:0}
+.cmp .after-w{position:absolute;inset:0;clip-path:inset(0 0 0 50%)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);pointer-events:none}
+.cmp .bar::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:20px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.tag{position:absolute;bottom:12px;padding:5px 12px;border-radius:8px;background:rgba(22,33,43,.85);color:#fff;font-size:13px;font-weight:600;z-index:2;pointer-events:none}
+
+/* Прайс */
+.prices{background:var(--white)}
+.pr{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pr span{font-size:16px}
+.pr b{font-family:Unbounded,sans-serif;font-weight:500;font-size:15px;text-align:right;white-space:nowrap}
+.pr b.sm{white-space:normal;font-size:13px}
+.prices .btn{margin-top:28px;width:100%}
+.btn-price{background:#fff;color:var(--ink);min-height:58px;font-size:17px}
+.btn-price:hover{background:var(--porcelain)}
+
+/* Відгуки */
+.rev{padding:24px;background:var(--white);border-radius:var(--r);border:1px solid var(--line)}
+.rev p{font-size:16px}
+.rev footer{margin-top:16px;display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.rev i{color:#e0a100;font-style:normal;letter-spacing:2px}
+.scroller{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--pad) * -1);padding:0 var(--pad) 8px;scrollbar-width:none}
+.scroller::-webkit-scrollbar{display:none}
+.scroller .rev{flex:0 0 84%;scroll-snap-align:center}
+
+/* Контакти */
+.contacts{background:var(--glaze);color:#fff}
+.contacts h2{font-size:clamp(26px,7vw,40px)}
+.contacts p{margin-top:12px;opacity:.88;max-width:480px}
+.contacts .cta{max-width:420px}
+.contacts .btn-main{background:#fff;color:var(--glaze-d)}
+.contacts .btn-ghost{border-color:rgba(255,255,255,.5)}
+footer.f{background:var(--ink);color:rgba(255,255,255,.6);padding:24px 0;font-size:14px;text-align:center}
+
+/* Нижня панель на телефоні */
+.bar-m{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.bar-m .btn{min-height:48px;padding:0 8px;font-size:15px}
+
+@media(min-width:760px){
+  body{padding-bottom:0}.bar-m{display:none}
+  section{padding:96px 0}
+  .burger{display:none}
+  .menu,.menu.open{display:flex;flex-direction:row;position:static;padding:0;border:0;background:none;gap:22px;align-items:center}
+  .menu a{padding:0;border:0;font-size:14px;opacity:.85}.menu a:hover{opacity:1}
+  .menu .btn{display:none}
+  .top-phone{display:block;font-weight:600;font-size:15px}
+  .hero{padding:88px 0}
+  .cta{grid-template-columns:auto;justify-items:start}
+  .about .wrap{grid-template-columns:.8fr 1.2fr;align-items:center;gap:64px}
+  .list{display:grid;grid-template-columns:1fr 1fr}
+  .row{padding:28px}.row:nth-child(odd){border-right:1px solid var(--line)}.row:nth-last-child(-n+2){border-bottom:0}
+  .grid2{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(4,1fr);gap:24px}
+  .steps li{padding:64px 0 0}
+  .steps li::after{left:56px;right:-24px;top:21px;bottom:auto;width:auto;height:2px}
+  .gal{grid-template-columns:repeat(4,1fr);gap:12px}
+  .scroller{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0}
+  .prices .wrap{max-width:820px}
+  .prices .btn{width:auto}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#home" class="logo">БУРДА ЮРІЙ<small>Професійне укладання плитки</small></a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <h1>Укладання плитки будь-якої складності</h1>
+      <p>Ванні кімнати, кухні, підлога, тераси, сходи та великоформатна плитка. Працюю акуратно, відповідально та з гарантією.</p>
+      <div class="cta">
+        <a href="https://drive.google.com/file/d/1wR7AWjLLByEMv9v9fT-gVvRCHvwCOOEL/view?usp=sharing" class="btn btn-price" target="_blank" rel="noopener">📄 Відкрити прайс-лист</a>
+        <a href="tel:+380982019905" class="btn btn-main">+380982019905</a>
+        <div class="msgs">
+          <!-- ЗАМІНІТЬ посилання на свої -->
+          <a href="viber://chat?number=%2B380982019905" class="btn btn-ghost">Viber</a>
+          <a href="https://t.me/+380982019905" class="btn btn-ghost">Telegram</a>
+          <a href="https://wa.me/380982019905" class="btn btn-ghost">WhatsApp</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div><b>10+</b><span>років досвіду</span></div>
+        <div><b>500+</b><span>об'єктів</span></div>
+        <div><b>100%</b><span>відповідальність</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prices" id="price">
+  <div class="wrap">
+    <div class="head"><h2>Орієнтовний прайс</h2><p>Остаточна вартість залежить від складності, площі та виду плитки.</p></div>
+    <div class="pr"><span>Укладання плитки</span><b>від 600 грн/м²</b></div>
+    <div class="pr"><span>Керамограніт</span><b>від 650 грн/м²</b></div>
+    <div class="pr"><span>Великоформатна плитка</span><b>від 1200 грн/м²</b></div>
+    <div class="pr"><span>Фартух кухні</span><b>від 1000 грн</b></div>
+    <div class="pr"><span>Сходи</span><b class="sm">індивідуальний розрахунок</b></div>
+    <div class="pr"><span>Затирка швів</span><b>від 150 грн/м²</b></div>
+    <a class="btn btn-main" href="https://drive.google.com/file/d/1y99D4fT2Wd_9SX572QhvJ29L-9Xt8CG8/view" target="_blank" rel="noopener">Відкрити повний прайс-лист</a>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head"><h2>Виконую всі види плиткових робіт</h2><p>Квартири, приватні будинки, комерційні приміщення та новобудови.</p></div>
+    <div class="list">
+      <div class="row"><h3>Ванні кімнати</h3><p>Облицювання стін, підлоги, душових зон, інсталяцій та санвузлів.</p></div>
+      <div class="row"><h3>Кухні</h3><p>Фартух, підлога, робочі зони та декоративне облицювання.</p></div>
+      <div class="row"><h3>Підлога</h3><p>Плитка та керамограніт будь-якого формату.</p></div>
+      <div class="row"><h3>Великоформатна плитка</h3><p>Монтаж великих плит з дотриманням усіх технологій.</p></div>
+      <div class="row"><h3>Сходи</h3><p>Облицювання внутрішніх і зовнішніх сходів.</p></div>
+      <div class="row"><h3>Затирка швів</h3><p>Заповнення швів, силіконізація та завершальна обробка.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="adv">
+  <div class="wrap">
+    <div class="head"><h2>Чому звертаються саме до мене</h2></div>
+    <div class="grid2">
+      <div class="card"><h3>Понад 10 років досвіду</h3><p>Багато успішно виконаних об'єктів різної складності.</p></div>
+      <div class="card"><h3>Сучасний інструмент</h3><p>Професійне обладнання забезпечує точність роботи.</p></div>
+      <div class="card"><h3>Гарантія якості</h3><p>Працюю відповідно до сучасних будівельних стандартів.</p></div>
+      <div class="card"><h3>Чистота після роботи</h3><p>Завжди підтримую порядок на робочому місці.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>Мої роботи</h2><p>Натисніть на фото, щоб відкрити на весь екран.</p></div>
+    <div class="gal" id="gal">
+      <button aria-label="Відкрити фото 1"><div class="ph"><img src="img/gallery/work1.jpg" alt="Робота 1" loading="lazy" onerror="this.remove()"></div></button>
+      <button aria-label="Відкрити фото 2"><div class="ph"><img src="img/gallery/work2.jpg" alt="Робота 2" loading="lazy" onerror="this.remove()"></div></button>
+      <button aria-label="Відкрити фото 3"><div class="ph"><img src="img/gallery/work3.jpg" alt="Робота 3" loading="lazy" onerror="this.remove()"></div></button>
+      <button aria-label="Відкрити фото 4"><div class="ph"><img src="img/gallery/work4.jpg" alt="Робота 4" loading="lazy" onerror="this.remove()"></div></button>
+      <button aria-label="Відкрити фото 5"><div class="ph"><img src="img/gallery/work5.jpg" alt="Робота 5" loading="lazy" onerror="this.remove()"></div></button>
+      <button aria-label="Відкрити фото 6"><div class="ph"><img src="img/gallery/work6.jpg" alt="Робота 6" loading="lazy" onerror="this.remove()"></div></button>
+      <button aria-label="Відкрити фото 7"><div class="ph"><img src="img/gallery/work7.jpg" alt="Робота 7" loading="lazy" onerror="this.remove()"></div></button>
+      <button aria-label="Відкрити фото 8"><div class="ph"><img src="img/gallery/work8.jpg" alt="Робота 8" loading="lazy" onerror="this.remove()"></div></button>
+    </div>
+  </div>
+</section>
+<dialog id="lb"><form method="dialog"><img id="lbimg" alt=""><button class="x" aria-label="Закрити">×</button></form></dialog>
+
+
+
+<section>
+  <div class="wrap">
+    <div class="head"><h2>Що говорять клієнти</h2></div>
+    <div class="scroller">
+      <article class="rev"><p>Робота виконана дуже акуратно. Все зроблено у погоджений термін. Однозначно рекомендую.</p><footer><span>Іван, Львів</span><i>★★★★★</i></footer></article>
+      <article class="rev"><p>Велике спасибі за якісну укладку плитки. Майстер уважний до деталей.</p><footer><span>Олена, Дрогобич</span><i>★★★★★</i></footer></article>
+      <article class="rev"><p>Дуже сподобалася якість роботи, охайність та відповідальність.</p><footer><span>Андрій, Трускавець</span><i>★★★★★</i></footer></article>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <h2>Розрахуємо вашу роботу</h2>
+    <p>Зателефонуйте або напишіть у месенджер. Відповідаю протягом дня.</p>
+    <div class="cta">
+      <a href="tel:+380982019905" class="btn btn-main">+38 (098) 201-99-05</a>
+      <div class="msgs">
+        <a href="viber://chat?number=%2B380982019905" class="btn btn-ghost">Viber</a>
+        <a href="https://t.me/+380982019905" class="btn btn-ghost">Telegram</a>
+        <a href="https://wa.me/380982019905" class="btn btn-ghost">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="f"><div class="wrap">© 2026 Бурда Юрій. Укладання плитки</div></footer>
+
+<div class="bar-m">
+  <a href="tel:+380982019905" class="btn btn-main">Зателефонувати</a>
+  <a href="viber://chat?number=%2B380982019905" class="btn btn-dark">Viber</a>
+  <a href="https://t.me/+380982019905" class="btn btn-dark">Telegram</a>
+</div>
+
+<script>
+// Галерея на весь екран
+const lb=document.getElementById('lb'),li=document.getElementById('lbimg');
+document.querySelectorAll('#gal button').forEach(x=>x.onclick=()=>{
+  const i=x.querySelector('img'); if(!i)return;
+  li.src=i.src;lb.showModal();
+});
+lb.onclick=e=>{if(e.target===lb||e.target===li)lb.close()};
+</script>
+</body>
+</html>
